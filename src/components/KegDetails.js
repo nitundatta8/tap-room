@@ -1,28 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types'
+import KegList from './KegList'
 
 function KegDetails(props) {
+  console.log(props.keg.name + " keg name")
   return (
     <React.Fragment>
       <hr />
-      <h3>{props.name} Details</h3>
-      <p>Brand : {props.brand}</p>
-      <p>Price : {props.price}</p>
-      <p>Flavor : {props.flavor}</p>
-      <p>Caffeine : {props.caffeine}</p>
-      <p>Quantity : {props.quantity}</p>
+      <h3>{props.keg.name} Details</h3>
+      <p>Brand : {props.keg.brand}</p>
+      <p>Price : {props.keg.price}</p>
+      <p>Flavor : {props.keg.flavor}</p>
+      <p>Caffeine : {props.keg.caffeine}</p>
+      <p>Quantity : {props.keg.quantity}</p>
+      <button>Buy</button>
     </React.Fragment>
   );
 }
 
 KegDetails.prototype = {
-  name: PropTypes.string,
-  brand: PropTypes.string,
-  price: PropTypes.number,
-  flavor: PropTypes.string,
-  caffeine: PropTypes.number,
-  quantity: PropTypes.number
+  keg: PropTypes.object
 }
 export default KegDetails;
 
-
-export default KegDetails;

@@ -1,6 +1,7 @@
 import React from 'react'
 import NewKegForm from './NewKegForm';
 import KegList from './KegList'
+import KegDetails from './KegDetails'
 
 class TapRoomControl extends React.Component {
   constructor(props) {
@@ -27,16 +28,20 @@ class TapRoomControl extends React.Component {
   }
 
   handleChangingSelectedKeg = (id) => {
-    const currentKeg = this.state.masterKegList.filter((keg => keg.id === id)[0])
+    const currentKeg = this.state.masterKegList.filter(keg => keg.id === id)[0]
     this.setState({
       selectKeg: currentKeg
     })
-  }
+  };
+
+
 
   render() {
     let currentVisibleState = null;
     let addKegButton = null;
-    if (this.state.formVisibleOnPage) {
+    if (this.state.selectKeg !== null) {
+      currentVisibleState = <KegDetails keg={this.state.selectKeg} />
+    } else if (this.state.formVisibleOnPage) {
       currentVisibleState = <NewKegForm onAddKegCreation={this.handleAddingNewKegToList} />
     }
     else {
