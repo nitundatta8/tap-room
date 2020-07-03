@@ -59,13 +59,19 @@ class TapRoomControl extends React.Component {
     })
   };
 
-
+  handleDeletingKeg = (id) => {
+    const newKegList = this.state.masterKegList.filter(keg => keg.id !== id);
+    this.setState({
+      masterKegList: newKegList,
+      selectKeg: null
+    })
+  }
 
   render() {
     let currentVisibleState = null;
     let buttonText = null;
     if (this.state.selectKeg !== null) {
-      currentVisibleState = <KegDetails keg={this.state.selectKeg} />
+      currentVisibleState = <KegDetails keg={this.state.selectKeg} onKegDelete={this.handleDeletingKeg} />
       buttonText = 'Return To the KegList';
     } else if (this.state.formVisibleOnPage) {
       currentVisibleState = <NewKegForm onAddKegCreation={this.handleAddingNewKegToList} />

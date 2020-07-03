@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import KegList from './KegList'
 
 function KegDetails(props) {
-  console.log(props.keg.name + " keg name")
+
   return (
-    <React.Fragment>
+    <React.Fragment >
       <hr />
       <h3>{props.keg.name} Details</h3>
       <p>Brand : {props.keg.brand}</p>
@@ -13,7 +13,7 @@ function KegDetails(props) {
       <p>Flavor : {props.keg.flavor}</p>
       <p>Caffeine Content: {props.keg.caffeine} mg</p>
       <p>Quantity : {props.keg.quantity}</p>
-
+      <button onClick={() => props.onKegDelete(props.keg.id)}>Delete Keg</button>
     </React.Fragment>
   );
 }
