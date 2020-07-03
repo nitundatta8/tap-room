@@ -8,9 +8,15 @@ _This app allows a user to add kegs to the keg list and see the master list. A u
 ## Component Tree
 ![Diagram](./public/tapRoom1.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup/Installation
+_Setup assumes use of Git version control_
+
+In terminal, navigate to desktop or other directory and clone the repository by typing:
+  * git clone https://github.com/nitundatta8/InventoryControl.git
 
 ## Available Scripts
+
+In the project directory, run `npm install` to install all dependencies.
 
 In the project directory, you can run:
 
@@ -46,6 +52,23 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Specification
+   * As user cab add a new keg to a keg list.
+   * A user can see a list/menu of all available kegs including name, brand, price and      alcoholContent .
+   * A user can click on a keg to see its detail page.
+   * As can see how many pints are left in a keg.
+   * A user able to click a button next to a keg to sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
+
+## Technologies Used
+* Git
+* React
+* Javascript
+* npm
+* Webpack
+* JSX
+* Html
+* CSS
 
 ## Learn More
 
