@@ -42,8 +42,8 @@ class TapRoomControl extends React.Component {
     })
   };
 
-  handleSellingPint = (kegObject) => {
-    console.log("Update : " + kegObject.name)
+  handleSellingPint = (id) => {
+    const kegObject = this.state.masterKegList.filter(keg => keg.id === id)[0]
     const newKeg = {
       name: kegObject.name,
       brand: kegObject.brand,
