@@ -36,13 +36,9 @@ Keg.prototype = {
   quantity: PropTypes.number,
   whenKegClick: PropTypes.func,
   whenSellingClick: PropTypes.func,
-
-  keg: PropTypes.obje
+  keg: PropTypes.object
 };
 
-const stock = {
-  fontSize: '20px'
-}
 
 const lowStock = {
   color: "yellow",
