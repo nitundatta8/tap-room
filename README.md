@@ -1,5 +1,5 @@
 # Tap Room 
-#### By: Nitun
+#### By: Nitun Datta
 _July 02, 2020_
 
 ## Description
@@ -61,14 +61,14 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
    * A user able to click a button next to a keg to sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
 
 ## Technologies Used
-* Git
-* React
-* Javascript
-* npm
-* Webpack
-* JSX
-* Html
-* CSS
+  * Git
+  * React
+  * Javascript
+  * npm
+  * Webpack
+  * JSX
+  * Html
+  * CSS
 
 ## Learn More
 
