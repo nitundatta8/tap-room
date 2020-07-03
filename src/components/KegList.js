@@ -14,6 +14,8 @@ function KegList(props) {
           caffeine={keg.caffeine}
           quantity={keg.quantity}
           whenKegClick={() => props.onKegSelection(keg.id)}
+          // onClickingSellPint={props.onClickingSellPint}
+          whenSellingClick={() => props.onClickingSellPint(keg.id)}
           id={keg.id}
           key={keg.id} />
       )}
@@ -24,6 +26,7 @@ function KegList(props) {
 
 KegList.prototype = {
   kegList: PropTypes.array,
-  onKegSelection: PropTypes.func
+  onKegSelection: PropTypes.func,
+  // onClickingSellPint: PropTypes.func
 }
 export default KegList;

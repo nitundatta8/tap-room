@@ -43,6 +43,7 @@ class TapRoomControl extends React.Component {
   };
 
   handleSellingPint = (kegObject) => {
+    console.log("Update : " + kegObject.name)
     const newKeg = {
       name: kegObject.name,
       brand: kegObject.brand,
@@ -56,7 +57,7 @@ class TapRoomControl extends React.Component {
     this.setState({
       masterKegList: updateKeg
     })
-  }
+  };
 
 
 
@@ -70,7 +71,7 @@ class TapRoomControl extends React.Component {
       currentVisibleState = <NewKegForm onAddKegCreation={this.handleAddingNewKegToList} />
       buttonText = 'Return To the KegList';
     } else {
-      currentVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />
+      currentVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} onClickingSellPint={this.handleSellingPint} />
       buttonText = 'Add Keg';
     }
     return (
