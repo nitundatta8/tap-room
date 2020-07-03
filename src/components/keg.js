@@ -49,7 +49,7 @@ const lowStock = {
   fontSize: '25px'
 }
 const dryUp = {
-  color: "Red",
+  color: "darkorange",
   fontSize: '25px'
 }
 export default Keg;

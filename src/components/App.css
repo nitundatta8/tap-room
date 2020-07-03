@@ -3,4 +3,5 @@ body, html {
   background-image: radial-gradient(ivory, gray, black);
   /* background-color: indigo; */
   text-align: center;
+  font-size: 20px;
 }
