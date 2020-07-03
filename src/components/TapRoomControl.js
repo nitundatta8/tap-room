@@ -7,7 +7,8 @@ class TapRoomControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      masterKegList: []
+      masterKegList: [],
+      selectKeg: null
     }
   }
 
@@ -25,6 +26,13 @@ class TapRoomControl extends React.Component {
     })
   }
 
+  handleChangingSelectedKeg = (id) => {
+    const currentKeg = this.state.masterKegList.filter((keg => keg.id === id)[0])
+    this.setState({
+      selectKeg: currentKeg
+    })
+  }
+
   render() {
     let currentVisibleState = null;
     let addKegButton = null;
@@ -32,7 +40,7 @@ class TapRoomControl extends React.Component {
       currentVisibleState = <NewKegForm onAddKegCreation={this.handleAddingNewKegToList} />
     }
     else {
-      currentVisibleState = <KegList kegList={this.state.masterKegList} />
+      currentVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />
       addKegButton = <button onClick={this.handleClick}>Add Keg</button>
     }
     return (

@@ -13,6 +13,7 @@ function KegList(props) {
           flavor={keg.flavor}
           caffeine={keg.caffeine}
           quantity={keg.quantity}
+          whenKegClick={() => props.onKegSelection(keg.id)}
           id={keg.id}
           key={keg.id} />
       )}
@@ -22,11 +23,7 @@ function KegList(props) {
 }
 
 KegList.prototype = {
-  name: PropTypes.string,
-  brand: PropTypes.string,
-  price: PropTypes.number,
-  flavor: PropTypes.string,
-  caffeine: PropTypes.number,
-  quantity: PropTypes.number
+  kegList: PropTypes.array,
+  onKegSelection: PropTypes.func
 }
 export default KegList;
