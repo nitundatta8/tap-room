@@ -1,3 +1,13 @@
+# Tap Room 
+#### By: Nitun
+_July 02, 2020_
+
+## Description
+_This app allows a user to add kegs to the keg list and see the master list. A user can also "sell a pint" and reduce the quantity of a keg._
+
+## Component Tree
+![Diagram](./public/tapRoom1.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
