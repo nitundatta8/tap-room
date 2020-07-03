@@ -9,11 +9,11 @@ function KegDetails(props) {
       <hr />
       <h3>{props.keg.name} Details</h3>
       <p>Brand : {props.keg.brand}</p>
-      <p>Price : {props.keg.price}</p>
+      <p>Price : ${props.keg.price} per pint</p>
       <p>Flavor : {props.keg.flavor}</p>
-      <p>Caffeine : {props.keg.caffeine}</p>
+      <p>Caffeine Content: {props.keg.caffeine} mg</p>
       <p>Quantity : {props.keg.quantity}</p>
-      <button>Buy</button>
+
     </React.Fragment>
   );
 }

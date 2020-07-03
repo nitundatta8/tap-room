@@ -14,9 +14,17 @@ class TapRoomControl extends React.Component {
   }
 
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
-    }));
+    if (this.state.selectKeg !== null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectKeg: null
+      })
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage
+      }));
+    }
+
   };
 
   handleAddingNewKegToList = (newKeg) => {
@@ -25,7 +33,7 @@ class TapRoomControl extends React.Component {
       masterKegList: newMasterKegList,
       formVisibleOnPage: false
     })
-  }
+  };
 
   handleChangingSelectedKeg = (id) => {
     const currentKeg = this.state.masterKegList.filter(keg => keg.id === id)[0]
@@ -34,24 +42,41 @@ class TapRoomControl extends React.Component {
     })
   };
 
+  handleSellingPint = (kegObject) => {
+    const newKeg = {
+      name: kegObject.name,
+      brand: kegObject.brand,
+      price: kegObject.price,
+      flavor: kegObject.flavor,
+      caffeine: kegObject.caffeine,
+      quantity: kegObject.quantity - 1,
+      id: kegObject.id
+    }
+    const updateKeg = this.state.masterKegList.filter(keg => keg.id !== kegObject.id).concat(newKeg);
+    this.setState({
+      masterKegList: updateKeg
+    })
+  }
+
 
 
   render() {
     let currentVisibleState = null;
-    let addKegButton = null;
+    let buttonText = null;
     if (this.state.selectKeg !== null) {
       currentVisibleState = <KegDetails keg={this.state.selectKeg} />
+      buttonText = 'Return To the KegList';
     } else if (this.state.formVisibleOnPage) {
       currentVisibleState = <NewKegForm onAddKegCreation={this.handleAddingNewKegToList} />
-    }
-    else {
+      buttonText = 'Return To the KegList';
+    } else {
       currentVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />
-      addKegButton = <button onClick={this.handleClick}>Add Keg</button>
+      buttonText = 'Add Keg';
     }
     return (
       <React.Fragment>
         {currentVisibleState}
-        {addKegButton}
+        <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }
