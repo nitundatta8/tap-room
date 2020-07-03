@@ -4,7 +4,7 @@ const styleHeader = {
   display: 'flex',
   justifyContent: 'center',
   margin: '5px',
-  backgroundColor: 'indigo',
+  backgroundColor: '#06155c',
   fontSize: '30px',
   color: 'ivory',
   width: '100%',
