@@ -8,7 +8,7 @@ function Keg(props) {
     text = props.name + ' keg has run dry. Time to restock!'
     changeColorText = dryUp;
   } else if (props.quantity <= 5) {
-    text = "Tap is drying up. " + '  Quantity : ' + props.quantity + ' pints';
+    text = "Tap is drying up. Quantity : " + props.quantity + ' pints';
     changeColorText = lowStock;
   } else {
     text = 'Quantity in keg : ' + props.quantity + 'pints';

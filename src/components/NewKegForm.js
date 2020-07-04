@@ -7,26 +7,32 @@ function NewKegForm(props) {
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
         <input
+          required
           type="text"
           name="name"
           placeholder="Name" /><br />
         <input
+          required
           type="text"
           name="brand"
           placeholder="Brand" /><br />
         <input
+          required
           type="number"
           name="price"
           placeholder="Price per pint" /><br />
         <input
+          required
           type="text"
           name="flavor"
           placeholder="Flavor" /><br />
         <input
+          required
           type="number"
           name="caffeine"
           placeholder="Caffeine content per serving in mg" /><br />
         <input
+          required
           type="number"
           name="quantity"
           placeholder="Quantity in pints" /><br />
